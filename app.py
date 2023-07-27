@@ -22,7 +22,7 @@ line_bot_api = LineBotApi("xAJ+N1oZ1cX4gZlo82ZPNzbGxREROpRMbqeAcN07HtuiQerS6YeAn
 # Channel Secret
 handler = WebhookHandler("07659ca99dd6aa7ea0b9c39f201ed0ec")
 # OPENAI API Key初始化設定
-openai.api_key = os.getenv('OPENAI_API_KEY')
+# openai.api_key = os.getenv('OPENAI_API_KEY')
 
 
 def GPT_response(text):
@@ -54,9 +54,9 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    GPT_answer = GPT_response(msg)
-    print(GPT_answer)
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(GPT_answer))
+    # GPT_answer = GPT_response(msg)
+    # print(GPT_answer)
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(msg))
 
 @handler.add(PostbackEvent)
 def handle_message(event):
