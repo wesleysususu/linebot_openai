@@ -18,9 +18,9 @@ import time
 app = Flask(__name__)
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 # Channel Access Token
-line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
+line_bot_api = LineBotApi("xAJ+N1oZ1cX4gZlo82ZPNzbGxREROpRMbqeAcN07HtuiQerS6YeAnhmeqm9PgdVINwwfb6sVj/7eZIjxrQCfXOlPU9kbtW0/r5K3gjzr5GKO3xUmNR96YMGoU0KdCRMiSdS2xlHmpOfWt8uTMQ3mEgdB04t89/1O/w1cDnyilFU=")
 # Channel Secret
-handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
+handler = WebhookHandler("07659ca99dd6aa7ea0b9c39f201ed0ec")
 # OPENAI API Key初始化設定
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
