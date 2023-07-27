@@ -72,7 +72,59 @@ def welcome(event):
     name = profile.display_name
     message = TextSendMessage(text=f'{name}歡迎加入')
     line_bot_api.reply_message(event.reply_token, message)
-        
+
+ @handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    msg = event.message.text
+    if '最新合作廠商' in msg:
+        message = imagemap_message()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '最新活動訊息' in msg:
+        message = buttons_message()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '註冊會員' in msg:
+        message = Confirm_Template()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '旋轉木馬' in msg:
+        message = Carousel_Template()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '圖片畫廊' in msg:
+        message = test()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '功能列表' in msg:
+        message = function_list()
+        line_bot_api.reply_message(event.reply_token, message)
+    else:
+        message = TextSendMessage(text=msg)
+        line_bot_api.reply_message(event.reply_token, message)
+
+@handler.add(PostbackEvent)
+def handle_message(event):
+    print(event.postback.data)
+
+
+@handler.add(MemberJoinedEvent)
+def welcome(event):
+    uid = event.joined.members[0].user_id
+    gid = event.source.group_id
+    profile = line_bot_api.get_group_member_profile(gid, uid)
+    name = profile.display_name
+    message = TextSendMessage(text=f'{name}content = '''
+👋你好,我是智能群管家
+"有我在你成交"
+👉現在由我帶大家體驗智能管家的功能
+➡️輸入:"0"返回本目錄
+➡️輸入:"1"可以看Q1解答
+➡️輸入:"2"可以看Q2解答
+依此類推
+Q1.智能管家是甚麼?
+Q2.各行各業能使用嗎?
+Q3.群不熱鬧該怎麼辦?
+Q4.管家使用上會不會很難?
+Q5.我有興趣
+'''
+message = TextSendMessage(content)')
+    line_bot_api.reply_message(event.reply_token, message)       
         
 import os
 if __name__ == "__main__":
