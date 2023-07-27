@@ -109,8 +109,10 @@ def welcome(event):
     gid = event.source.group_id
     profile = line_bot_api.get_group_member_profile(gid, uid)
     name = profile.display_name
-    message = TextSendMessage(text_content = f'''
-{name}  👋你好,我是智能群管家
+    text_content = f'''
+{name} 
+
+ 👋你好,我是智能群管家
 "有我在你成交"
 👉現在由我帶大家體驗智能管家的功能
 ➡️輸入:"0"返回本目錄
@@ -122,7 +124,7 @@ Q2.各行各業能使用嗎?
 Q3.群不熱鬧該怎麼辦?
 Q4.管家使用上會不會很難?
 Q5.我有興趣
-    '''')
+    '''
     
     message = TextSendMessage(text_content)
     line_bot_api.reply_message(event.reply_token, message)       
