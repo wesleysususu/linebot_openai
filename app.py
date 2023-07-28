@@ -91,8 +91,8 @@ def welcome(event):
     profile = line_bot_api.get_group_member_profile(gid, uid)
     name = profile.display_name
     text_content = f'''
-{name} 歡迎加入智能群
-
+{name} 
+歡迎加入智能群
  👋你好,我是智能群管家
 "有我在你成交"
 👉現在由我帶大家體驗智能管家的功能
