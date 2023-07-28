@@ -92,8 +92,9 @@ def welcome(event):
     name = profile.display_name
     text_content = f'''
 {name} 
-歡迎加入智能群
- 👋你好,我是智能群管家
+
+ 👋你好,歡迎加入智能群
+ 我是智能群管家
 "有我在你成交"
 👉現在由我帶大家體驗智能管家的功能
 ➡️輸入:"0"返回本目錄
