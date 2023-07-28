@@ -56,9 +56,9 @@ def handle_message(event):
     msg = event.message.text
 msg = event.message.text
 if 'Q1' in msg:
-你是乖寶寶
-elif '關鍵字2' in msg:
-動作2
+message =text_message(你是乖寶寶)
+elif 'Q2' in msg:
+message =text_message(你是好寶寶)
 ...
 msg = event.message.text
 message = TextSendMessage(text="大哥!你說的是不是" + msg)
