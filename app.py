@@ -61,7 +61,7 @@ def handle_message(event):
         message = TextSendMessage(text="你是好寶寶")
     else:
         message = TextSendMessage(text=msg)
-line_bot_api.reply_message(event.reply_token, message)
+    line_bot_api.reply_message(event.reply_token, message)      
 @handler.add(PostbackEvent)
 def handle_message(event):
     print(event.postback.data)
