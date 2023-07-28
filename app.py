@@ -51,13 +51,16 @@ def callback():
 
 
 # 處理訊息
+# 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-
-message = TextSendMessage(text="大哥!你說的是不是" + msg)
-    # GPT_answer = GPT_response(msg)
-    # print(GPT_answer)
+    if 'Q1' in msg:
+        message = TextSendMessage(text="你是乖寶寶")
+    elif 'Q2' in msg:
+        message = TextSendMessage(text="你是好寶寶")
+    else:
+        message = TextSendMessage(text=msg)
 line_bot_api.reply_message(event.reply_token, message)
 @handler.add(PostbackEvent)
 def handle_message(event):
@@ -93,8 +96,7 @@ def welcome(event):
     text_content = f'''
 {name} 
 
- 👋你好,歡迎加入智能群
- 我是智能群管家
+ 👋你好,我是智能群管家
 "有我在你成交"
 👉現在由我帶大家體驗智能管家的功能
 ➡️輸入:"0"返回本目錄
