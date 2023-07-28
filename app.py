@@ -54,7 +54,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    
+
 message = TextSendMessage(text="大哥!你說的是不是" + msg)
     # GPT_answer = GPT_response(msg)
     # print(GPT_answer)
@@ -91,7 +91,7 @@ def welcome(event):
     profile = line_bot_api.get_group_member_profile(gid, uid)
     name = profile.display_name
     text_content = f'''
-{name} 
+{name} 歡迎加入智能群
 
  👋你好,我是智能群管家
 "有我在你成交"
