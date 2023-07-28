@@ -56,9 +56,9 @@ def handle_message(event):
     msg = event.message.text
 msg = event.message.text
 if 'Q1' in msg:
-message = imagemap_message(你是乖寶寶)
+message=TextSendMessage('你是乖寶寶')
 elif 'Q2' in msg:
-message =buttons_message(你是好寶寶)
+message=TextSendMessage('你是好寶寶')
 ...
 msg = event.message.text
 message = TextSendMessage(text="大哥!你說的是不是" + msg)
