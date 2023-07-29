@@ -8,6 +8,13 @@ from linebot.exceptions import (
 )
 from linebot.models import *
 
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+def print_log(text):
+    logging.info(text)
+
 #======python的函數庫==========
 import tempfile, os
 import datetime
@@ -55,9 +62,9 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    print(f'msg={msg}')
-    print('Q1' in msg)
-    print('Q2' in msg)
+    print_log(f'msg={msg}')
+    print_log('Q1' in msg)
+    print_log('Q2' in msg)
     if 'Q1' in msg:
         message = TextSendMessage(text="你是乖寶寶")
     elif 'Q2' in msg:
