@@ -59,9 +59,11 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    app.logger.info(f'msg={msg}')
-    app.logger.info('Q1' in msg)
-    app.logger.info('Q2' in msg)
+    app.logger.info("Request body: " + body)
+
+    logging.info(f'msg={msg}')
+    logging.info('Q1' in msg)
+    logging.info('Q2' in msg)
     if 'Q1' in msg:
         message = TextSendMessage(text="你是乖寶寶")
     elif 'Q2' in msg:
