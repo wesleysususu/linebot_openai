@@ -1,4 +1,3 @@
-from message import *
 message = TextSendMessage(A1)
 
 A1='''「影響溝通力」對於業務工作及職場可以帶來更有效的溝通與協調，讓職場上的合作更加順暢。
