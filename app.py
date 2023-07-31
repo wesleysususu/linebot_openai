@@ -63,7 +63,7 @@ def handle_message(event):
     msg = event.message.text
     print(msg)
     if 'Q1' in msg:
-        answer_1 = TextSendMessage(text="A1")
+        Message = TextSendMessage(A1)
     elif 'Q2' in msg:
         message = TextSendMessage(text="你是好寶寶")
     else:
