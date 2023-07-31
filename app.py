@@ -12,6 +12,8 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
+from message import message=TextSendMessage(A1)*
+
 #======python的函數庫==========
 import tempfile, os
 import datetime
@@ -62,21 +64,13 @@ def handle_message(event):
     print(msg)
     if 'Q1' in msg:
         message = TextSendMessage(text=
-        "Q1:
-
-    A1:
-    「影響溝通力」對於業務工作及職場可以帶來更有效的溝通與協調，讓職場上的合作更加順暢。
-    同時，擁有影響力的溝通力也可以增加個人的「信任度和說服力」，提升自己在職場上的地位與影響力。
-    最重要的是，良好的溝通技巧能夠幫助我們更好地理解他人，建立良好的人際關係，同時也能夠發掘更多商機，
-    帶來更多的職涯發展機會!
-    影響力溝通最核心技術是NLP神經語言學,透過系統化課程教學,可以幫助你在業務工作中掌握「開發的流程」,
-    有效提升開發工作效率,同時透過指令的學習,讓你可以掌握對方的想法及有效引導達成「共識與成交」!")
+        "你是乖寶寶")
     elif 'Q2' in msg:
         message = TextSendMessage(text="你是好寶寶")
     else:
         message = TextSendMessage(text=msg)
     line_bot_api.reply_message(event.reply_token, message)
-
+    
 @handler.add(PostbackEvent)
 def handle_message(event):
     print(event.postback.data)
