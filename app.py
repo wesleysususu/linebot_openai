@@ -64,7 +64,7 @@ def handle_message(event):
     print(msg)
     if 'Q1' in msg:
         message = TextSendMessage(A1)
-    if 'Q2' in msg:
+    elif 'Q2' in msg:
         message = TextSendMessage(A2)
     else:
         message = TextSendMessage(text=msg)
