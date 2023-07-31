@@ -66,6 +66,8 @@ def handle_message(event):
         message = TextSendMessage(A1)
     elif 'Q2' in msg:
         message = TextSendMessage(A2)
+
+        
     else:
         message = TextSendMessage(text=msg)
     line_bot_api.reply_message(event.reply_token, message)
