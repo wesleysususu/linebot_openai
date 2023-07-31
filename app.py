@@ -12,7 +12,9 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-from message import message=TextSendMessage(A1)*
+from message import*
+
+message =TextSendMessage(A1) 
 
 #======python的函數庫==========
 import tempfile, os
@@ -64,7 +66,7 @@ def handle_message(event):
     print(msg)
     if 'Q1' in msg:
         message = TextSendMessage(text=
-        "你是乖寶寶")
+        "A1")
     elif 'Q2' in msg:
         message = TextSendMessage(text="你是好寶寶")
     else:
