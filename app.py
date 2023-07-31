@@ -65,7 +65,7 @@ def handle_message(event):
     if 'Q1' in msg:
         message = TextSendMessage(A1)
     elif 'Q2' in msg:
-        message = TextSendMessage(text="你是好寶寶")
+        message = TextSendMessage(A2)
     else:
         message = TextSendMessage(text=msg)
     line_bot_api.reply_message(event.reply_token, message)
@@ -81,9 +81,7 @@ def welcome(event):
     profile = line_bot_api.get_group_member_profile(gid, uid)
     name = profile.display_name
     text_content = f'''
-{name} 
-
- (sparkling eyes)你好!!
+{name}  你好!!
 歡迎加入影響力溝通群組~
 👋我是智能群管家：小衛
 ⏰為了提升大家進群的效率，我來
