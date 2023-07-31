@@ -14,6 +14,9 @@ logging.basicConfig(level=logging.INFO)
 
 from message import*
 
+"answer_1 = TextSendMessage(A1)"
+
+
 #======python的函數庫==========
 import tempfile, os
 import datetime
