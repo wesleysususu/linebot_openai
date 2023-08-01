@@ -66,7 +66,7 @@ def handle_message(event):
         message = TextSendMessage(A1)
     elif '2' in msg:
         message = TextSendMessage(A2)
-    elif '2' in msg:
+    elif '0' in msg:
         message = TextSendMessage(A0)
 
 
