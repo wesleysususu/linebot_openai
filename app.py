@@ -62,12 +62,14 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     print(msg)
-    if 'Q1' in msg:
+    if '1' in msg:
         message = TextSendMessage(A1)
-    elif 'Q2' in msg:
+    elif '2' in msg:
         message = TextSendMessage(A2)
+    elif '2' in msg:
+        message = TextSendMessage(A0)
 
-        
+
     else:
         message = TextSendMessage(text=msg)
     line_bot_api.reply_message(event.reply_token, message)
