@@ -69,7 +69,26 @@ def handle_message(event):
     elif '0' in msg:
         message = TextSendMessage(A0)
 
+    elif '3' in msg:
+        message = TextSendMessage(A3)
 
+    elif '4' in msg:
+        message = TextSendMessage(A4)
+
+    elif '5' in msg:
+        message = TextSendMessage(A5)
+
+    elif '6' in msg:
+        message = TextSendMessage(A6)
+
+    elif '7' in msg:
+        message = TextSendMessage(A7)
+
+    elif '8' in msg:
+        message = TextSendMessage(A8)
+
+    elif '9' in msg:
+        message = TextSendMessage(A9)
     else:
         message = TextSendMessage(text=msg)
     line_bot_api.reply_message(event.reply_token, message)
