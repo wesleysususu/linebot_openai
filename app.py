@@ -35,7 +35,7 @@ def wake_up_render():
             print('喚醒render成功')
         else:
             print('喚醒失敗')
-        time.sleep(28*60)
+        time.sleep(30*60)
 
 threading.Thread(target=wake_up_render).start()
 
