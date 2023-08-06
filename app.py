@@ -105,8 +105,6 @@ def handle_message(event):
     elif '8' in msg:
         message = TextSendMessage(A8)
 
-    elif '9' in msg:
-        message = TextSendMessage(A9)
     else:
         message = TextSendMessage(text=msg)
     line_bot_api.reply_message(event.reply_token, message)
