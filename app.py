@@ -12,7 +12,6 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-from message import*
 
 #======python的函數庫==========
 import tempfile, os
