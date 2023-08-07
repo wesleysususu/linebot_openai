@@ -20,6 +20,7 @@ import datetime
 import openai
 import time
 #======python的函數庫==========
+app = Flask(__name__)
 
 @app.route("/render_wake_up")
 def render_wake_up():
@@ -39,7 +40,7 @@ def wake_up_render():
 
 threading.Thread(target=wake_up_render).start()
 
-app = Flask(__render__)
+
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 # Channel Access Token
 line_bot_api = LineBotApi("xAJ+N1oZ1cX4gZlo82ZPNzbGxREROpRMbqeAcN07HtuiQerS6YeAnhmeqm9PgdVINwwfb6sVj/7eZIjxrQCfXOlPU9kbtW0/r5K3gjzr5GKO3xUmNR96YMGoU0KdCRMiSdS2xlHmpOfWt8uTMQ3mEgdB04t89/1O/w1cDnyilFU=")
