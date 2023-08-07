@@ -32,6 +32,7 @@ def wake_up_render():
     while 1==1:
         url = 'https://linebot-openai-test-krs7.onrender.com/' + 'render_wake_up'
         res = requests.get(url)
+        print(res)
         if res.status_code==200:
             print('喚醒render成功')
         else:
