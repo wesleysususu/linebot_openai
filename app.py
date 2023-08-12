@@ -107,7 +107,8 @@ def handle_message(event):
     elif '8' in msg:
         message = TextSendMessage(A8)
 
-    
+    else:
+        message = TextSendMessage(請你重新輸入0即可找到關鍵字)
     line_bot_api.reply_message(event.reply_token, message)
     
 @handler.add(PostbackEvent)
