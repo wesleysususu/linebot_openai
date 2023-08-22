@@ -158,6 +158,8 @@ Q6.關於自媒體的內容綱要有什麼？
 Q7.我對3C不熟悉，會影響學習嗎？
 
 Q8.我可以邀請朋友一起來參加學習嗎？
+
+Q9.課程費用及開課時間？
     '''
     
     message = TextSendMessage(text_content)
