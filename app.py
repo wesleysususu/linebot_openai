@@ -107,8 +107,10 @@ def handle_message(event):
     elif '8' in msg:
         message = TextSendMessage(A8)
 
+    elif '9' in msg:
+        message = TextSendMessage(A9)
     else:
-        message = TextSendMessage('🌈親愛的朋友!➡️你可以重新輸入「0」即可透過主選菜單找到關鍵字解答你的問題喔‼️')
+        message = TextSendMessage('🌈親愛的朋友!➡️你可以重新輸入「0」即可透過主選菜單找到關鍵字解答你的問題喔‼️如需要真人服務,可直接加衛斯理LINE,謝謝!')
     line_bot_api.reply_message(event.reply_token, message)
     
 @handler.add(PostbackEvent)
